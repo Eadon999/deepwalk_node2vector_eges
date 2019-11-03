@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>embedding.eges</groupId>
+    <groupId>algorithm.cedarmo</groupId>
     <artifactId>enhanced_graph_embedding_side_information</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -26,6 +26,22 @@
             <version>${scala.version}</version>
         </dependency>
         <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-auth</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.9</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scala.binary.version}</artifactId>
             <version>${spark.version}</version>
@@ -38,23 +54,11 @@
             <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
-            <groupId>commons-configuration</groupId>
-            <artifactId>commons-configuration</artifactId>
-            <version>1.9</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.5</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib -->
-        <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-mllib_2.11</artifactId>
             <version>${spark.version}</version>
             <!--<scope>provided</scope>-->
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.scalanlp/breeze -->
         <dependency>
             <groupId>org.scalanlp</groupId>
             <artifactId>breeze_2.11</artifactId>
@@ -143,23 +147,24 @@
                 <configuration>
                     <scalaVersion>${scala.version}</scalaVersion>
                 </configuration>
-            </plugin> <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>1.7</source>
-                <target>1.7</target>
-                <encoding>utf-8</encoding>
-            </configuration>
-            <executions>
-                <execution>
-                    <phase>compile</phase>
-                    <goals>
-                        <goal>compile</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
@@ -168,7 +173,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>example.Example5</mainClass>
+                            <mainClass>example.Example1</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

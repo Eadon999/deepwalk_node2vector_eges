@@ -1,8 +1,9 @@
 package main
 
+import breeze.linalg.{DenseVector, norm}
 import eges.embedding.WeightedSkipGram
 import sparkapplication.BaseSparkLocal
-import breeze.linalg.{norm, DenseVector}
+
 import scala.collection.mutable.ArrayBuffer
 
 object Main2 extends BaseSparkLocal {

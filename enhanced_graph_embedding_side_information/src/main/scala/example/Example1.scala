@@ -58,18 +58,5 @@ object Example1 extends BaseSparkLocal {
 
     list3.foreach(println)
 
-
-
-
-
-
-
-
-
-
-
-
-
   }
-
 }
